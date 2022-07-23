@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather project</title>
+    <!-- CSS only -->
+    <script
+      src="https://kit.fontawesome.com/8b8d6a11c1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+      <div class="row" id="row-1">
+        <div class="col-8">
+          <span class="title">the.weather</span>
+        </div>
+        <div class="col-4">
+          <form id="city-form">
+          <input
+            type="text"
+            id="city-input"
+            class="form-control"
+            aria-describedby="passwordHelpBlock"
+            placeholder="🔍 Another location"
+          />
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mainInfo">
+          <div class="currentInfo">
+            <h1>London</h1>
+            <p class="time-date" id="date">11:11 - Monday, 6 Jun`22</p>
+          </div>
+        </div>
+        <div class="col-4">
+
+          <span class="units">
+            <a href="#" id="celsius-link">°C</a> |
+            <a href="#" id="farenheit-link">°F</a>
+          </span>
+          <br />
+          <p>Vancouver</p>
+          <p>New York</p>
+          <p>Beijin</p>
+          <p>Kyiv</p>
+          
+          <hr />
+          <br />
+          <p class="strong">Weather details</p>
+          <p>Feels like <span class="infoTemp">06°C</span></p>
+          <p>Humidity <span class="infoTemp">72%</span></p>
+          <p>Wind <span class="infoTemp">8 km/h</span></p>
+        </div>
+      </div>
+
+      <br />
+
+    </div> 
+
+      <div class="container-fluid footer">
+        <div class="row" id="row-3">
+          <div class="col-3 align-self-center">
+            <div class="row">
+              <div class="col-6">
+                <img src="src/sun.png" alt="" class="main-img"/>
+              </div>
+              <div class="col-6 align-self-center">
+                <p id="card-today">TODAY</p>
+                <h2><span id=current-temp class="temp">12</span>°C</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p class="card-day">MON</p>
+            <img src="src/sun.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+          <div class="col">
+            <p class="card-day">TUE</p>
+            <img src="src/sun.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+          <div class="col">
+            <p class="card-day">WED</p>
+            <img src="src/rain.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+          <div class="col">
+            <p class="card-day">THR</p>
+            <img src="src/cloud.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+          <div class="col">
+            <p class="card-day">FRI</p>
+            <img src="src/sun.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+          <div class="col">
+            <p class="card-day">SAT</p>
+            <img src="src/snow.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/index.js"></script>
+</html>
