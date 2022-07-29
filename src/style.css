@@ -21,6 +21,7 @@ h2 {
 h1 {
   font-size: 70px;
   margin: 0;
+  text-transform: capitalize;
 }
 
 h5 {

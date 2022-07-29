@@ -54,7 +54,6 @@ function changeCity(event) {
   let cityInput = document.querySelector("#city-input");
   let city = document.querySelector("h1");
   let cityValue = cityInput.value;
-  cityValue = cityValue.charAt(0).toUpperCase() + cityValue.slice(1);
   city.innerHTML = cityValue;
 
   //change temperature
@@ -69,6 +68,19 @@ function changeCity(event) {
     console.log(temperature);
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = `${temperature}`;
+
+    let feelsLikeData = Math.round(response.data.main.feels_like);
+    console.log(feelsLikeData);
+    let feelsLike = document.querySelector("#feels-like");
+    feelsLike.innerHTML = `${feelsLikeData}°C`;
+
+    let humidityData = response.data.main.humidity;
+    let humidity = document.querySelector("#humidity");
+    humidity.innerHTML = `${humidityData} %`;
+
+    let windData = Math.round(response.data.wind.speed);
+    let wind = document.querySelector("#wind");
+    wind.innerHTML = `${windData} km/h`;
   }
 }
 
@@ -103,6 +115,19 @@ function showTempetature(response) {
   currentTemp.innerHTML = `${temperature}`;
   let h1 = document.querySelector("h1");
   h1.innerHTML = currentCity;
+
+  let feelsLikeData = Math.round(response.data.main.feels_like);
+  console.log(feelsLikeData);
+  let feelsLike = document.querySelector("#feels-like");
+  feelsLike.innerHTML = `${feelsLikeData}°C`;
+
+  let humidityData = response.data.main.humidity;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${humidityData} %`;
+
+  let windData = Math.round(response.data.wind.speed);
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `${windData} km/h`;
 }
 
 function showPosition(position) {
