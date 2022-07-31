@@ -150,9 +150,9 @@ function showTempetature(response) {
   wind.innerHTML = `${windData} km/h`;
 
   let icon = document.querySelector("#icon");
-  icon.setAttribute("src", `src/${response.data.weather[0].icon}.png`);
+  let iconElement = response.data.weather[0].icon;
+  icon.setAttribute("src", `src/${iconElement}.png`);
   icon.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data.weather[0].icon);
 }
 
 function showPosition(position) {
