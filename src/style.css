@@ -49,6 +49,10 @@ a {
   color: #fff;
 }
 
+a:hover {
+  color: #0d6efd;
+}
+
 .container {
   margin: 0 auto;
 }
@@ -158,4 +162,13 @@ a {
 
 .strong {
   font-weight: 600;
+}
+
+.active {
+  text-decoration: none;
+  cursor: default;
+}
+
+.active:hover {
+  color: #fff;
 }
