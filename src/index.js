@@ -81,6 +81,11 @@ function changeCity(event) {
     let windData = Math.round(response.data.wind.speed);
     let wind = document.querySelector("#wind");
     wind.innerHTML = `${windData} km/h`;
+
+    let icon = document.querySelector("#icon");
+    console.log(response.data.weather[0].icon);
+    icon.setAttribute("src", `src/${response.data.weather[0].icon}.png`);
+    icon.setAttribute("alt", response.data.weather[0].description);
   }
 }
 
