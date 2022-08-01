@@ -81,10 +81,12 @@ function changeCity(event) {
     let wind = document.querySelector("#wind");
     wind.innerHTML = `${windData} km/h`;
 
-    console.log(response.data.weather[0].icon);
     let icon = document.querySelector("#icon");
     let iconElement = response.data.weather[0].icon;
-    icon.setAttribute("src", `src/${iconElement}.png`);
+    icon.setAttribute(
+      "src",
+      `https://raw.githubusercontent.com/peevaliz/my-weather-project-/main/src/${iconElement}.png`
+    );
     icon.setAttribute("alt", response.data.weather[0].description);
   }
 }
@@ -149,10 +151,12 @@ function showTempetature(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${windData} km/h`;
 
-  console.log(response.data.weather[0].icon);
   let icon = document.querySelector("#icon");
   let iconElement = response.data.weather[0].icon;
-  icon.setAttribute("src", `src/${iconElement}.png`);
+  icon.setAttribute(
+    "src",
+    `https://raw.githubusercontent.com/peevaliz/my-weather-project-/main/src/${iconElement}.png`
+  );
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
