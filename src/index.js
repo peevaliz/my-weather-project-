@@ -169,3 +169,26 @@ function showPosition(position) {
   axios.get(`${apiUrl}`).then(showTempetature);
 }
 navigator.geolocation.getCurrentPosition(showPosition);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <p class="card-day">${day}</p>
+            <img src="src/01d.png" alt="" class="day-img"/>
+            <h5>12°C</h5>
+          </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();

@@ -25,8 +25,8 @@ h1 {
 }
 
 h5 {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
   left: 0%;
   text-align: center;
@@ -40,9 +40,10 @@ hr {
 }
 
 img {
-  width: 60%;
+  width: 50%;
   display: block;
   margin: 0 auto;
+  margin-bottom: 5px;
 }
 
 a {
@@ -128,10 +129,11 @@ a:hover {
 }
 
 .card-day {
-  width: 50%;
-  min-width: 55px;
-  position: absolute;
-  top: 0;
+  width: 60%;
+  margin-bottom: 5px;
+  /* min-width: 55px; */
+  /* position: absolute;
+  top: 0; */
 }
 
 #card-today {
@@ -148,13 +150,13 @@ a:hover {
   backdrop-filter: blur(1.5px);
 }
 
-.day-img {
+/* .day-img {
   padding: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .main-img {
   width: 100%;
@@ -171,4 +173,8 @@ a:hover {
 
 .active:hover {
   color: #fff;
+}
+
+.temp-min {
+  opacity: 0.5;
 }
