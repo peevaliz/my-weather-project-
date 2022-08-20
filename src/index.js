@@ -186,21 +186,34 @@ function showPosition(position) {
 }
 navigator.geolocation.getCurrentPosition(showPosition);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
           <div class="col-2">
-            <p class="card-day">${day}</p>
-            <img src="src/01d.png" alt="" class="day-img"/>
-            <h5>12°C</h5>
+            <p class="card-day">${formatDay(forecastDay.dt)}</p>
+            <img src="src/${
+              forecastDay.weather[0].icon
+            }.png" alt="" class="day-img"/>
+            <h5>${Math.round(forecastDay.temp.max)}°C</h5>
           </div>
 `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
 
