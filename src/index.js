@@ -108,41 +108,6 @@ function changeCity(event) {
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", changeCity);
 
-//Celsius to farenheit
-
-function toFarenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp");
-  let fahrenheilTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = `${Math.round(fahrenheilTemperature)}°F`;
-
-  let feelsLike = document.querySelector("#feels-like");
-  feelsLike.innerHTML = `${Math.round(fahrenheilTemperature)}°F`;
-
-  farenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-}
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", toFarenheit);
-
-function toCelsius(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = `${Math.round(celsiusTemperature)}°C`;
-
-  let feelsLike = document.querySelector("#feels-like");
-  feelsLike.innerHTML = `${Math.round(celsiusTemperature)}°C`;
-
-  farenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", toCelsius);
-
-let celsiusTemperature = null;
-
 function showTempetature(response) {
   celsiusTemperature = response.data.main.temp;
 
