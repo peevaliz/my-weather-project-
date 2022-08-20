@@ -47,6 +47,14 @@ let currentDate =
 let currentDateDiv = document.querySelector("#date");
 currentDateDiv.innerHTML = currentDate;
 
+//Forecast
+
+function getForecast(coordinates) {
+  let apiKey = `76a35369f06f76080a05f6fc077ecb04`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //Change city name to city input
 
 function changeCity(event) {
@@ -64,6 +72,10 @@ function changeCity(event) {
 
   function showTempetature(response) {
     celsiusTemperature = response.data.main.temp;
+
+    let currentCity = response.data.name;
+    let h1 = document.querySelector("h1");
+    h1.innerHTML = currentCity;
 
     let temperature = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#current-temp");
@@ -88,6 +100,8 @@ function changeCity(event) {
       `https://raw.githubusercontent.com/peevaliz/my-weather-project-/main/src/${iconElement}.png`
     );
     icon.setAttribute("alt", response.data.weather[0].description);
+
+    getForecast(response.data.coord);
   }
 }
 
@@ -158,6 +172,8 @@ function showTempetature(response) {
     `https://raw.githubusercontent.com/peevaliz/my-weather-project-/main/src/${iconElement}.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function showPosition(position) {
@@ -170,7 +186,7 @@ function showPosition(position) {
 }
 navigator.geolocation.getCurrentPosition(showPosition);
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
