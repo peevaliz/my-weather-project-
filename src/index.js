@@ -172,7 +172,7 @@ function displayForecast(response) {
         `
           <div class="col-2">
             <p class="card-day">${formatDay(forecastDay.dt)}</p>
-            <img src="src/${
+            <img src="https://raw.githubusercontent.com/peevaliz/my-weather-project-/main/src/${
               forecastDay.weather[0].icon
             }.png" alt="" class="day-img"/>
             <h5>${Math.round(forecastDay.temp.max)}°C</h5>
